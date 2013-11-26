@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>AngularJS Animation Demo</title>
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <script src="js/vendor/angular-1.2.2.min.js"></script>
+
+</head>
+<body data-ng-app="slidingPanelModule">
+
+
+<div class="container ng-cloak">
+
+    <h1>AngularJS Animation Demo</h1>
+
+
+    <!-- Sliding panel example. -->
+    <my-panel data-title="'Example Panel'" data-subtitle="'Example Panel Subtitle'">
+
+        <!-- Two buttons, to open sliding panel 1 or 2. -->
+        <a class="mainpanel-button" data-ng-click="slidingPanels.panel1=true">Click Me 1</a>
+        <a class="mainpanel-button" data-ng-click="slidingPanels.panel2=true">Click Me 2</a>
+
+        <p>Just some random text within the main window.</p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+            laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+        <hr/>
+
+        <p>&nbsp;</p>
+
+        <p>
+            Example AngularJS Animation, following blog post: <a href="#" target="_blank">Todo: www.juurlink.org/AngularJS Animations</a>
+        </p>
+
+
+        <!-- Sliding panel 1. -->
+        <my-sliding-panel data-ng-if="slidingPanels.panel1" data-on-close="slidingPanels.panel1=false">
+            <div data-ng-include="'sliding-panel1.html'"></div>
+        </my-sliding-panel>
+
+
+        <!-- Sliding panel 2. -->
+        <my-sliding-panel data-ng-if="slidingPanels.panel2" data-on-close="slidingPanels.panel2=false">
+            <div data-ng-include="'sliding-panel2.html'"></div>
+        </my-sliding-panel>
+
+    </my-panel>
+
+</div>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<!-- Fallback to local jQuery. -->
+<script>window.jQuery || document.write('\u003c' + 'script src="js/vendor/jquery-1.10.2.min.js">\u003c/script>')</script>
+<script src="js/vendor/angular-animate-1.2.2.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

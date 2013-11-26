@@ -1,0 +1,303 @@
+/* Fonts algemeen. */
+body, p, textarea, input, button, select, h1, h2, h3, h4 {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.4;
+    color: #333;
+}
+
+h1 {
+    color: #ff6600;
+    font-weight: bold;
+    font-size: 2em;
+    margin: 0 0 20px 0;
+    padding: 0;
+}
+
+h2 {
+    color: #ff6600;
+    font-weight: bold;
+    margin: 0 0 1em 0;
+    padding: 0;
+}
+
+h3 {
+    color: #ff6600;
+    font-weight: normal;
+    margin: 0 0 10px 0;
+    padding: 0;
+}
+
+/*
+======================================
+ Layout algemeen.
+======================================
+*/
+
+/* Make the container go all the way to the bottom of the topbar */
+body {
+    background-color: white;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+/* Padding nooit onderdeel van breetdte en hoogte. */
+div, a, p, h1, h2, h3 {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+a, a:active, a:visited {
+    color: #00c;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+a:hover {
+    color: #ff6600;
+    text-decoration: underline;
+}
+
+a[tabindex] {
+    outline: none;
+}
+
+.container {
+    width: 960px;
+    margin: 0 auto;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+======================================
+ Buttons.
+======================================
+*/
+
+.secondary-btn {
+    margin-left: 20px;
+}
+
+/*
+======================================
+ Default panel.
+======================================
+*/
+
+.ng-cloak {
+    display: none !important;
+}
+
+.mainpanel-title {
+    display: block;
+    margin: 0;
+    padding: 10px 20px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border: 1px solid #d6d6d6;
+    border-bottom: 2px solid #d6d6d6;
+}
+
+.mainpanel-body {
+    position: relative;
+    min-height: 400px;
+    padding: 20px;
+    margin: 0 0 20px 0;
+    background-color: white;
+
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border: 1px solid #d6d6d6;
+    border-top: none;
+}
+
+.mainpanel-button {
+    display: inline-block;
+    color: #002897;
+    width: 85px;
+    height: 85px;
+    background: url(../img/icons-buttons-sprite.png) no-repeat;
+    text-align: center;
+    text-decoration: none;
+    line-height: 1em;
+    padding: 60px 0 0 0;
+    margin: 0 10px 0 0;
+}
+
+.mainpanel-button:hover {
+    background-position: -90px 0;
+}
+
+a.mainpanel-button {
+    text-decoration: none;
+}
+
+/*
+======================================
+ Sliding panel.
+======================================
+*/
+
+.slidingpanel-background {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: .4;
+    background-color: black;
+}
+
+.slidingpanel-body {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 5%;
+    height: 100%;
+    width: 95%;
+    padding: 20px;
+    background-color: white;
+
+    border-radius: 3px;
+    border: 1px solid #d6d6d6;
+
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, .4);
+    -moz-box-shadow: 0 0 10px rgba(0, 0, 0, .4);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .4);
+
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+}
+
+/* Content groter dan beschikbare ruimte, dan scrollbars tonen. */
+.slidingpanel-body-scroll {
+    height: 100%;
+    overflow: auto;
+}
+
+.slidingpanel-body p:first-child {
+    margin-top: 0;
+}
+
+/* Zet transition op de parent, zodat AngularJS weet dat er animaties actief zijn. */
+.slidingpanelparent.ng-enter, .slidingpanelparent.ng-leave, my-sliding-panel.ng-enter, my-sliding-panel.ng-leave {
+    -webkit-transition-duration: .3s;
+    transition-duration: .3s;
+}
+
+.ng-enter .slidingpanel-body {
+    -webkit-animation: .3s slide-animation-enter;
+    animation: .3s slide-animation-enter;
+    animation-timing-function: ease-out;
+    -webkit-animation-timing-function: ease-out;
+}
+
+.ng-leave .slidingpanel-body {
+    -webkit-animation: .3s slide-animation-leave;
+    animation: .3s slide-animation-leave;
+    animation-timing-function: ease-in;
+    -webkit-animation-timing-function: ease-in;
+}
+
+@keyframes slide-animation-enter {
+    from {
+        left: 150%;
+    }
+    to {
+        left: 5%;
+    }
+}
+
+@keyframes slide-animation-leave {
+    from {
+        left: 5%;
+    }
+    to {
+        left: 150%;
+    }
+}
+
+@-webkit-keyframes slide-animation-enter {
+    from {
+        left: 150%;
+    }
+    to {
+        left: 5%;
+    }
+}
+
+@-webkit-keyframes slide-animation-leave {
+    from {
+        left: 5%;
+    }
+    to {
+        left: 150%;
+    }
+}
+
+.ng-enter .slidingpanel-background {
+    -webkit-animation: .3s background-animation-enter;
+    animation: .3s background-animation-enter;
+}
+
+.ng-leave .slidingpanel-background {
+    -webkit-animation: 0.3s background-animation-leave;
+    animation: 0.3s background-animation-leave;
+}
+
+@keyframes background-animation-enter {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: .4;
+    }
+}
+
+@keyframes background-animation-leave {
+    from {
+        opacity: .4;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes background-animation-enter {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: .4;
+    }
+}
+
+@-webkit-keyframes background-animation-leave {
+    from {
+        opacity: .4;
+    }
+    to {
+        opacity: 0;
+    }
+}

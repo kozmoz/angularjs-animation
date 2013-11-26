@@ -1,0 +1,20 @@
+<div class="slidingpanelparent">
+
+    <div class="slidingpanel-body">
+        <div class="slidingpanel-body-scroll">
+
+            <div ng-transclude="ng-transclude">
+            </div>
+
+            <p>
+                <button data-ng-click="closeSlidingPanel()">Okay</button>
+                <a class="secondary-btn" data-ng-click="closeSlidingPanel()">Cancel</a>
+            </p>
+
+        </div>
+    </div>
+
+    <div class="slidingpanel-background" data-ng-click="closeSlidingPanel()" data-on-esc="closeSlidingPanel()">
+    </div>
+
+</div>
