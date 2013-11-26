@@ -20,11 +20,14 @@
 
 
     <!-- Sliding panel example. -->
-    <my-panel data-title="'Example Panel'" data-subtitle="'Example Panel Subtitle'">
+    <h2 class="mainpanel-title">Example Panel</h2>
+
+    <div class="mainpanel-body">
+
+        <h3>Example Panel Subtitle</h3>
 
         <!-- Two buttons, to open sliding panel 1 or 2. -->
-        <a class="mainpanel-button" data-ng-click="slidingPanels.panel1=true">Click Me 1</a>
-        <a class="mainpanel-button" data-ng-click="slidingPanels.panel2=true">Click Me 2</a>
+        <a class="mainpanel-button" data-ng-click="slidingPanels.panel=true">Click Me 1</a>
 
         <p>Just some random text within the main window.</p>
 
@@ -41,23 +44,36 @@
 
 
         <!-- Sliding panel 1. -->
-        <my-sliding-panel data-ng-if="slidingPanels.panel1" data-on-close="slidingPanels.panel1=false">
-            <div data-ng-include="'sliding-panel1.html'"></div>
-        </my-sliding-panel>
+        <div class="slidingpanel" data-ng-if="slidingPanels.panel">
 
+            <div class="slidingpanel-body">
+                <div class="slidingpanel-body-scroll">
 
-        <!-- Sliding panel 2. -->
-        <my-sliding-panel data-ng-if="slidingPanels.panel2" data-on-close="slidingPanels.panel2=false">
-            <div data-ng-include="'sliding-panel2.html'"></div>
-        </my-sliding-panel>
+                    <p><strong>Sliding Panel Content 1</strong></p>
 
-    </my-panel>
+                    <p>Content Block of Sliding Panel 1</p>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                        ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+                    <p>
+                        <button data-ng-click="slidingPanels.panel=false">Okay</button>
+                        <a class="secondary-btn" data-ng-click="slidingPanels.panel=false">Cancel</a>
+                    </p>
+
+                </div>
+            </div>
+
+            <div class="slidingpanel-background" data-ng-click="slidingPanels.panel=false" data-on-esc="slidingPanels.panel=false">
+            </div>
+
+        </div>
+
+    </div>
 
 </div>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<!-- Fallback to local jQuery. -->
-<script>window.jQuery || document.write('\u003c' + 'script src="js/vendor/jquery-1.10.2.min.js">\u003c/script>')</script>
 <script src="js/vendor/angular-animate-1.2.2.min.js"></script>
 <script src="js/main.js"></script>
 </body>

@@ -112,12 +112,13 @@ hr {
     padding: 10px 20px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    border: 1px solid #d6d6d6;
+    border: 1px solid #ff6600;
     border-bottom: 2px solid #d6d6d6;
 }
 
 .mainpanel-body {
     position: relative;
+    overflow: hidden;
     min-height: 400px;
     padding: 20px;
     margin: 0 0 20px 0;
@@ -125,7 +126,7 @@ hr {
 
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px;
-    border: 1px solid #d6d6d6;
+    border: 1px solid #ff6600;
     border-top: none;
 }
 
@@ -201,7 +202,7 @@ a.mainpanel-button {
 }
 
 /* Zet transition op de parent, zodat AngularJS weet dat er animaties actief zijn. */
-.slidingpanelparent.ng-enter, .slidingpanelparent.ng-leave, my-sliding-panel.ng-enter, my-sliding-panel.ng-leave {
+.slidingpanel.ng-enter, .slidingpanel.ng-leave {
     -webkit-transition-duration: .3s;
     transition-duration: .3s;
 }
@@ -222,7 +223,7 @@ a.mainpanel-button {
 
 @keyframes slide-animation-enter {
     from {
-        left: 150%;
+        left: 100%;
     }
     to {
         left: 5%;
@@ -234,13 +235,13 @@ a.mainpanel-button {
         left: 5%;
     }
     to {
-        left: 150%;
+        left: 100%;
     }
 }
 
 @-webkit-keyframes slide-animation-enter {
     from {
-        left: 150%;
+        left: 100%;
     }
     to {
         left: 5%;
@@ -252,7 +253,7 @@ a.mainpanel-button {
         left: 5%;
     }
     to {
-        left: 150%;
+        left: 100%;
     }
 }
 
