@@ -168,7 +168,7 @@ a.mainpanel-button {
     background-color: black;
 }
 
-.slidingpanel-body {
+.slidingpanel {
     position: absolute;
     z-index: 2;
     top: 0;
@@ -192,12 +192,12 @@ a.mainpanel-button {
 }
 
 /* Content groter dan beschikbare ruimte, dan scrollbars tonen. */
-.slidingpanel-body-scroll {
+.slidingpanel-scroll {
     height: 100%;
     overflow: auto;
 }
 
-.slidingpanel-body p:first-child {
+.slidingpanel p:first-child {
     margin-top: 0;
 }
 
