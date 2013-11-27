@@ -7,7 +7,7 @@ app.directive('onEsc', function () {
     "use strict";
 
     return function (scope, element, attributes) {
-        $(document).on('keydown', function (event) {
+        angular.element(document).on('keydown', function (event) {
             if (event.which !== 27) {
                 return;
             }

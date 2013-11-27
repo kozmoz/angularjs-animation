@@ -157,18 +157,13 @@ a.mainpanel-button {
 ======================================
 */
 
-.slidingpanel-background {
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    opacity: .4;
-    background-color: black;
+/* To enable animation, set CSS keyframe animation properties on sliding window. */
+.slidingpanel.ng-enter, .slidingpanel.ng-leave {
+    -webkit-transition-duration: .3s;
+    transition-duration: .3s;
 }
 
-.slidingpanel {
+.slidingpanel-body {
     position: absolute;
     z-index: 2;
     top: 0;
@@ -181,6 +176,9 @@ a.mainpanel-button {
     border-radius: 3px;
     border: 1px solid #d6d6d6;
 
+    /* If the content does not fit, show scrollbars. */
+    overflow: auto;
+
     -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, .4);
     -moz-box-shadow: 0 0 10px rgba(0, 0, 0, .4);
     box-shadow: 0 0 10px rgba(0, 0, 0, .4);
@@ -191,34 +189,33 @@ a.mainpanel-button {
     -ms-box-sizing: border-box;
 }
 
-/* Content groter dan beschikbare ruimte, dan scrollbars tonen. */
-.slidingpanel-scroll {
-    height: 100%;
-    overflow: auto;
-}
-
-.slidingpanel p:first-child {
+.slidingpanel-body p:first-child {
     margin-top: 0;
-}
-
-/* Zet transition op de parent, zodat AngularJS weet dat er animaties actief zijn. */
-.slidingpanel.ng-enter, .slidingpanel.ng-leave {
-    -webkit-transition-duration: .3s;
-    transition-duration: .3s;
 }
 
 .ng-enter .slidingpanel-body {
     -webkit-animation: .3s slide-animation-enter;
+    -webkit-animation-timing-function: ease-out;
     animation: .3s slide-animation-enter;
     animation-timing-function: ease-out;
-    -webkit-animation-timing-function: ease-out;
 }
 
 .ng-leave .slidingpanel-body {
     -webkit-animation: .3s slide-animation-leave;
+    -webkit-animation-timing-function: ease-in;
     animation: .3s slide-animation-leave;
     animation-timing-function: ease-in;
-    -webkit-animation-timing-function: ease-in;
+}
+
+.slidingpanel-background {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: .4;
+    background-color: black;
 }
 
 @keyframes slide-animation-enter {
