@@ -3,7 +3,7 @@ AngularJS Animation Demo
 
 Introduction
 ------------
-Example AngularJS Animation, following blog post: Todo
+Example AngularJS Animation, following blog post: AngularJS – Animaties
 
 
 Demo
@@ -12,7 +12,8 @@ http://sandbox.juurlink.org/angularjs-animation/
 
 Blog
 ----
-todo: http://www.juurlink.org/angularjs-animations
+AngularJS – Animaties
+http://www.juurlink.org/2013/11/angularjs-animaties/
 
 Compatibility
 -------------
