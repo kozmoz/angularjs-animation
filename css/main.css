@@ -157,7 +157,7 @@ a.mainpanel-button {
 ======================================
 */
 
-/* To enable animation, set CSS keyframe animation properties on sliding window. */
+/* To let AngularJS detect animation, set CSS keyframe animation properties on sliding window also. */
 .slidingpanel.ng-enter, .slidingpanel.ng-leave {
     -webkit-transition-duration: .3s;
     transition-duration: .3s;
@@ -222,15 +222,9 @@ a.mainpanel-button {
     from {
         left: 100%;
     }
-    to {
-        left: 5%;
-    }
 }
 
 @keyframes slide-animation-leave {
-    from {
-        left: 5%;
-    }
     to {
         left: 100%;
     }
@@ -240,15 +234,9 @@ a.mainpanel-button {
     from {
         left: 100%;
     }
-    to {
-        left: 5%;
-    }
 }
 
 @-webkit-keyframes slide-animation-leave {
-    from {
-        left: 5%;
-    }
     to {
         left: 100%;
     }
@@ -268,15 +256,9 @@ a.mainpanel-button {
     from {
         opacity: 0;
     }
-    to {
-        opacity: .4;
-    }
 }
 
 @keyframes background-animation-leave {
-    from {
-        opacity: .4;
-    }
     to {
         opacity: 0;
     }
@@ -286,15 +268,9 @@ a.mainpanel-button {
     from {
         opacity: 0;
     }
-    to {
-        opacity: .4;
-    }
 }
 
 @-webkit-keyframes background-animation-leave {
-    from {
-        opacity: .4;
-    }
     to {
         opacity: 0;
     }
