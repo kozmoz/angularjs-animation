@@ -11,7 +11,7 @@
     <script src="js/vendor/angular-1.2.2.min.js"></script>
 
 </head>
-<body data-ng-app="slidingPanelModule">
+<body data-ng-app="slidingPanelModule" data-ng-init="slidingPanels.breadcrumbs=['Example Panel']">
 
 
 <div class="container ng-cloak">
@@ -20,14 +20,16 @@
 
 
     <!-- Sliding panel example. -->
-    <h2 class="mainpanel-title">Example Panel</h2>
+    <h2 class="mainpanel-title">
+        <span class="mainpanel-title-crumb" data-ng-repeat="breadcrumb in slidingPanels.breadcrumbs">{{breadcrumb}}</span>
+    </h2>
 
     <div class="mainpanel-body">
 
         <h3>Example Panel Subtitle</h3>
 
         <!-- Two buttons, to open sliding panel 1 or 2. -->
-        <a class="mainpanel-button" data-ng-click="slidingPanels.panel=true">Click Me 1</a>
+        <a class="mainpanel-button" data-ng-click="slidingPanels.panel=true; slidingPanels.breadcrumbs=['Example Panel', 'Sliding Panel']">Click Me 1</a>
 
         <p>Just some random text within the main window.</p>
 
@@ -57,13 +59,13 @@
                     laboris nisi ut aliquip ex ea commodo consequat.</p>
 
                 <p>
-                    <button data-ng-click="slidingPanels.panel=false">Okay</button>
-                    <a class="secondary-btn" data-ng-click="slidingPanels.panel=false">Cancel</a>
+                    <button data-ng-click="slidingPanels.panel=false; slidingPanels.breadcrumbs=['Example Panel']">Okay</button>
+                    <a class="secondary-btn" data-ng-click="slidingPanels.panel=false; slidingPanels.breadcrumbs=['Example Panel']">Cancel</a>
                 </p>
 
             </div>
 
-            <div class="slidingpanel-background" data-ng-click="slidingPanels.panel=false" data-on-esc="slidingPanels.panel=false">
+            <div class="slidingpanel-background" data-ng-click="slidingPanels.panel=false; slidingPanels.breadcrumbs=['Example Panel']" data-on-esc="slidingPanels.panel=false; slidingPanels.breadcrumbs=['Example Panel']">
             </div>
 
         </div>

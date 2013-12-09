@@ -108,12 +108,23 @@ hr {
 
 .mainpanel-title {
     display: block;
+    overflow: hidden;
     margin: 0;
     padding: 10px 20px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     border: 1px solid #ff6600;
     border-bottom: 2px solid #d6d6d6;
+}
+
+.mainpanel-title-crumb:before {
+    content: ">";
+    margin: 0 1em;
+}
+
+.mainpanel-title-crumb:first-child:before {
+    content: "";
+    margin: 0;
 }
 
 .mainpanel-body {
@@ -273,5 +284,61 @@ a.mainpanel-button {
 @-webkit-keyframes background-animation-leave {
     to {
         opacity: 0;
+    }
+}
+
+/* Breadcrumbs. */
+
+.mainpanel-title-crumb.ng-enter {
+    position: relative;
+    left: 100%;
+    animation: .3s breadcrumb-animation-enter;
+    -webkit-animation: .3s breadcrumb-animation-enter;
+}
+
+.mainpanel-title-crumb.ng-leave {
+    position: relative;
+    left: 0;
+    animation: .3s breadcrumb-animation-leave;
+    -webkit-animation: .3s breadcrumb-animation-leave;
+}
+
+.mainpanel-title-crumb:first-child {
+    position: static;
+}
+
+@keyframes breadcrumb-animation-enter {
+    from {
+        left: 100%;
+    }
+    to {
+        left: 0;
+    }
+}
+
+@-webkit-keyframes breadcrumb-animation-enter {
+    from {
+        left: 100%;
+    }
+    to {
+        left: 0;
+    }
+}
+
+@keyframes breadcrumb-animation-leave {
+    from {
+        left: 0;
+    }
+    to {
+        left: 100%;
+    }
+}
+
+@-webkit-keyframes breadcrumb-animation-leave {
+    from {
+        left: 0;
+    }
+    to {
+        left: 100%;
     }
 }
